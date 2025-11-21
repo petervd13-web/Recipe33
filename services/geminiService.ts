@@ -97,8 +97,8 @@ const getSystemPrompt = (userSettings: UserSettings) => {
     - Goal: Body Recomposition (Build Muscle / Lose Fat).
     - Targets (PER PERSON): ~${userSettings.targetCalories} kcal, >${userSettings.targetProtein}g Protein, >${userSettings.targetCarbs}g Carbs.
     - Equipment: ${equipmentList || 'basic stovetop and pots only'}.
-    - EXCLUDED: ${userSettings.excludedIngredients || 'None'}.
-    - DIETARY PREFERENCE: Vegetarian/Plant-Based. Do not suggest meat.
+    - EXCLUDED: ${userSettings.excludedIngredients || 'Meat, Chicken, Fish'}.
+    - DIETARY PREFERENCE: Vegetarian/Plant-Based. Strictly NO meat, NO chicken, NO fish.
 
     TASK:
     1. Analyze recipe inputs (images or text).
@@ -110,7 +110,7 @@ const getSystemPrompt = (userSettings: UserSettings) => {
     
     CRITICAL RULES FOR INGREDIENTS & MACROS:
     - **PORTIONS**: All ingredient lists must be strictly for **2 PEOPLE (2 SERVINGS)**.
-    - **MACROS**: The calories, protein, fat, and carbs fields for each ingredient must be calculated **PER PERSON**.
+    - **MACROS**: The calories, protein, fat, and carbs fields for each ingredient must be calculated **PER PERSON** (for 1 serving).
       (Example: If recipe needs 400g Tofu for 2 people, the line item is "400g Tofu", but the macros are for 200g).
     
     4. BREAKDOWN:
